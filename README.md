@@ -6,7 +6,14 @@ A [Busybox](https://busybox.net/) container image implemented with alpine instea
 so that you can trivially add any tool with:
 
 ```bash
-apk add --no-cache my-utility
+apk add my-tool
+```
+
+## Usage
+
+We support only the [latest tag](https://github.com/gerardnico/busybox/pkgs/container/busybox)
+```bash
+docker pull ghcr.io/gerardnico/busybox:latest
 ```
 
 ## Why
