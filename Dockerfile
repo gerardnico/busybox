@@ -21,3 +21,7 @@ RUN apk update \
      && apk add dnsutils \
      # Keep container small
      rm -rf /var/cache/apk/*
+
+# The default shell
+# Was sh for busybox: https://github.com/docker-library/busybox/blob/a2783b883c18c45a4d91a24327d42048a04068ff/latest/glibc/Dockerfile
+CMD ["bash"]
