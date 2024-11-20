@@ -17,8 +17,10 @@ RUN apk update \
      && apk add curl \
      # Bash
      && apk add bash \
-     # DnsLookup
-     && apk add dnsutils \
+     # NsLookup and dig
+     && apk add bind-tools \
+     # Kubectl
+     && apk add kubectl \
      # Keep container small
      rm -rf /var/cache/apk/*
 

@@ -3,7 +3,9 @@
 ## About
 
 A [Busybox](https://busybox.net/) container image implemented with alpine instead 
-so that you can trivially add any tool with:
+so that:
+* it contains basic/core cli tools for executing Bash scripts
+* any tool can be added trivially:
 
 ```bash
 apk add my-tool
@@ -32,4 +34,5 @@ Example : wget reimplementation : https://git.busybox.net/busybox/tree/networkin
 ## List of embedded cli
 
 * curl
-* nslookup (ie dnsutils)
+* nslookup. dig (ie bind-tools)
+* kubectl
