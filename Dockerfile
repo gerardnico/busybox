@@ -14,15 +14,20 @@ LABEL org.opencontainers.image.description="Minimal Alpine Based BusyBox with ma
 # Literally it equals apk update in the beginning and rm -rf /var/cache/apk/*
 RUN apk update \
      # Curl
-     && apk add curl \
+     && apk add --no-cache curl \
      # Bash
-     && apk add bash \
+     && apk add --no-cache bash \
      # NsLookup and dig
-     && apk add bind-tools \
+     && apk add --no-cache bind-tools \
+     # Mtr
+     && apk add --no-cache mtr \
+     # Traceroute
+     && apk add --no-cache traceroute \
      # Kubectl
-     && apk add kubectl \
-     # Keep container small
-     rm -rf /var/cache/apk/*
+     && apk add --no-cache kubectl
+     # Don't do `rm -rf` to keep the container small otherwise we can't install anything anymore \
+     # We get: ERROR: unable to select packages
+     # rm -rf /var/cache/apk/*
 
 # The default shell
 # Was sh for busybox: https://github.com/docker-library/busybox/blob/a2783b883c18c45a4d91a24327d42048a04068ff/latest/glibc/Dockerfile
