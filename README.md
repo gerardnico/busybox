@@ -8,6 +8,7 @@ so that:
 * any tool can be added trivially:
 
 ```bash
+# not working ???
 apk add my-tool
 ```
 

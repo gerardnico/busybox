@@ -24,7 +24,9 @@ RUN apk update \
      # Traceroute
      && apk add --no-cache traceroute \
      # Kubectl
-     && apk add --no-cache kubectl
+     && apk add --no-cache kubectl \
+     # Kubectl
+     && apk add --no-cache openssl
      # Don't do `rm -rf` to keep the container small otherwise we can't install anything anymore \
      # We get: ERROR: unable to select packages
      # rm -rf /var/cache/apk/*
