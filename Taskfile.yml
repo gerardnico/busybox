@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+
+  # Build the docker image
+  build:
+    cmds:
+      - dock-x build
+  push:
+    cmds:
+      - dock-x push

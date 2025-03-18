@@ -26,7 +26,9 @@ RUN apk update \
      # Kubectl
      && apk add --no-cache kubectl \
      # Kubectl
-     && apk add --no-cache openssl
+     && apk add --no-cache openssl \
+     # Telnet and other tools
+     && apk add --no-cache busybox-extras
      # Don't do `rm -rf` to keep the container small otherwise we can't install anything anymore \
      # We get: ERROR: unable to select packages
      # rm -rf /var/cache/apk/*
